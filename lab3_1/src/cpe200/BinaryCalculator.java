@@ -1,11 +1,15 @@
 package cpe200;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 /**
  * Created by pruet on 5/9/2559.
  */
 
 public class BinaryCalculator {
-    /* your code here */
+    private BigDecimal nFirstOperand;
+    private BigDecimal nSecondOperand;
 
     public BinaryCalculator()
     {
@@ -14,38 +18,35 @@ public class BinaryCalculator {
 
     public void setFirstOperand(Operand operand)
     {
-        /* your code here */
+        nFirstOperand = new BigDecimal(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand)
     {
-        /* your code here */
+        nSecondOperand = new BigDecimal(operand.operand);
     }
 
     public String add()
     {
-        /* your code here */
-        return null;
+        return nFirstOperand.add(nSecondOperand).stripTrailingZeros().toString();
     }
 
     public String subtract()
     {
-        /* your code here */
-        return null;
+        return nFirstOperand.subtract(nSecondOperand).stripTrailingZeros().toString();
     }
 
     public String multiply()
     {
-        /* your code here */
-        return null;
+        return nFirstOperand.multiply(nSecondOperand).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        /* your code here */
-        return null;
+        if (nSecondOperand.compareTo(BigDecimal.ZERO) == 0) throw new IllegalArgumentException("Argument 'divisor' is zero.");
+        return nFirstOperand.divide(nSecondOperand,5, RoundingMode.HALF_UP).stripTrailingZeros().toString();
     }
 
 
