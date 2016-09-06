@@ -35,6 +35,7 @@ public class User {
 
 
     public boolean setPassword(String name) {
+
         /* your code here */
         if (name.length() >= 12) {
             boolean haveNumber=false, haveUpper=false, haveLower=false;
