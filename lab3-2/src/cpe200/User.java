@@ -1,5 +1,7 @@
 package cpe200;
 
+import sun.security.util.Password;
+
 /**
  * Created by pruet on 6/9/2559.
  */
@@ -9,30 +11,37 @@ public class User {
 
     public User()
     {
-        /* your code here */
+        setUserName("");
+        setPassword("");
     }
 
     public boolean setUserName(String name)
     {
-        /* your code here */
+        String A = "[a-zA-Z][A-Za-z0-9]{7,}";
+        if(name.matches(A)){
+            userName = name;
+            return true;
+        }
         return false;
     }
 
     public boolean setPassword(String name)
     {
-        /* your code here */
+        String B = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{12,}";
+        if (name.matches(B)){
+            password = name;
+            return true;
+        }
         return false;
     }
 
     public String getUserName()
     {
-        /* your code here */
-        return null;
+        return userName;
     }
 
     public String getPassword()
     {
-        /* your code here */
-        return null;
+        return password;
     }
 }
