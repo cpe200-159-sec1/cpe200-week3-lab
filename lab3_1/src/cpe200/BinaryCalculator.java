@@ -3,9 +3,11 @@ package cpe200;
 /**
  * Created by pruet on 5/9/2559.
  */
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class BinaryCalculator {
-    /* your code here */
+    private BigDecimal FirstOper,SecOper;
 
     public BinaryCalculator()
     {
@@ -14,38 +16,34 @@ public class BinaryCalculator {
 
     public void setFirstOperand(Operand operand)
     {
-        /* your code here */
+        FirstOper = new BigDecimal (operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand)
     {
-        /* your code here */
+        SecOper = new BigDecimal (operand.operand);
     }
 
     public String add()
     {
-        /* your code here */
-        return null;
+        return FirstOper.add(SecOper).stripTrailingZeros().toString();
     }
 
     public String subtract()
     {
-        /* your code here */
-        return null;
+        return FirstOper.subtract(SecOper).stripTrailingZeros().toString();
     }
 
     public String multiply()
     {
-        /* your code here */
-        return null;
+        return FirstOper.multiply(SecOper).stripTrailingZeros().toString();
     }
 
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        /* your code here */
-        return null;
+        return FirstOper.divide(SecOper,5,RoundingMode.HALF_UP).stripTrailingZeros().toString();
     }
 
 
