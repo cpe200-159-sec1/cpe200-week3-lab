@@ -60,7 +60,7 @@ public class User {
 
     public String getPassword()
     {
-        /* your code here */
+         /* your code here */
         return password;
     }
 }
