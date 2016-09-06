@@ -5,6 +5,7 @@ import cpe200.Operand;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 import static org.junit.Assert.*;
 
 
@@ -315,6 +316,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand(-3.0);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
+
         assertEquals("-1.66667", binaryCalculator.division());
     }
 
