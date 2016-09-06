@@ -54,13 +54,11 @@ public class BinaryCalculator {
     public String division()
     {
         /* your code here */
-        /*
-        String test;
-        test = secondO.toString();
-        if (test=="0"){
-            return ;
+
+        if (secondO.equals(0)){
+            throw new ArithmeticException("Error");
         }
-        */
+
 
 
 
