@@ -5,6 +5,7 @@ import cpe200.Operand;
 import org.junit.Before;
 import org.junit.Test;
 
+import static com.sun.xml.internal.ws.dump.LoggingDumpTube.Position.Before;
 import static org.junit.Assert.*;
 
 
@@ -60,7 +61,7 @@ public class BinaryCalculatorTest {
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
         try {
-            binaryCalculator.multiply();
+            binaryCalculator.division();
             fail("The operation must raise an exception");
         } catch (Exception ex) {
             assertTrue(true);
@@ -133,7 +134,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand(2.0);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("2", binaryCalculator.subtract());
+        assertEquals("1", binaryCalculator.subtract());
     }
 
     @Test
@@ -185,7 +186,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand("-1");
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("-4", binaryCalculator.subtract());
+        assertEquals("-2", binaryCalculator.subtract());
     }
 
     @Test
@@ -213,7 +214,7 @@ public class BinaryCalculatorTest {
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
         try {
-            binaryCalculator.multiply();
+            binaryCalculator.division();
             fail("The operation must raise an exception");
         } catch (Exception ex) {
             assertTrue(true);
@@ -235,7 +236,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand(-2);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("-5", binaryCalculator.subtract());
+        assertEquals("-1", binaryCalculator.subtract());
     }
 
     @Test
@@ -286,7 +287,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand(-2.3);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("-5.5", binaryCalculator.subtract());
+        assertEquals("-0.9", binaryCalculator.subtract());
     }
 
     @Test
