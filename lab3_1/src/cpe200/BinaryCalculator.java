@@ -7,7 +7,6 @@ import java.math.BigDecimal;
  */
 
 public class BinaryCalculator {
-
     /* your code here */
     public BigDecimal firstOperand;
     public BigDecimal secondOperand;
