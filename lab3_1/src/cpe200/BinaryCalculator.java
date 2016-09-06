@@ -55,7 +55,6 @@ public class BinaryCalculator {
         return bn1.toString();
     }
 
-    /* This method should throw an exception when divide by zero */
     public String division()
     {
         /* your code here */
