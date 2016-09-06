@@ -12,8 +12,7 @@ public class BinaryCalculator {
     public BigDecimal secondOperand;
 
     public BinaryCalculator()
-    {
-        /* your code here */
+    {/* your code here */
         this.firstOperand = new BigDecimal(0);
         this.secondOperand = new BigDecimal(0);
     }
