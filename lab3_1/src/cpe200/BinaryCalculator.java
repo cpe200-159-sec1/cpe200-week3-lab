@@ -54,6 +54,15 @@ public class BinaryCalculator {
     public String division()
     {
         /* your code here */
+        /*
+        String test;
+        test = secondO.toString();
+        if (test=="0"){
+            return ;
+        }
+        */
+
+
 
         return firstO.divide(secondO,5,BigDecimal.ROUND_UP).stripTrailingZeros().toString();
     }
