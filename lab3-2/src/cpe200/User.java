@@ -6,33 +6,43 @@ package cpe200;
 public class User {
     protected String userName;
     protected String password;
+    protected String userNamePattern = "^[a-zA-Z][a-zA-Z0-9]{7,}";
+    protected String passwordPattern = "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{12,}";
 
     public User()
     {
-        /* your code here */
+        this.userName = "";
+        this.password = "";
     }
 
     public boolean setUserName(String name)
     {
-        /* your code here */
+
+        if(name.matches(userNamePattern))
+        {
+            userName = name;
+            return true;
+        }
         return false;
     }
 
     public boolean setPassword(String name)
     {
-        /* your code here */
+        if(name.matches(passwordPattern))
+        {
+            password = name;
+            return true;
+        }
         return false;
     }
 
     public String getUserName()
     {
-        /* your code here */
-        return null;
+        return userName;
     }
 
     public String getPassword()
     {
-        /* your code here */
-        return null;
+        return password;
     }
 }
