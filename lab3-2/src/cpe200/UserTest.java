@@ -50,7 +50,7 @@ public class UserTest {
     public void getUserName() throws Exception {
         user.setUserName("harrypotter");
         assertEquals("harrypotter", user.getUserName());
-    }
+}
 
     @Test
     public void getPassword() throws Exception {
