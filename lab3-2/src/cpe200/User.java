@@ -17,12 +17,14 @@ public class User {
     public boolean setUserName(String name)
     {
         /* your code here */
+        this.userName = (name.equals(uPattern))?name:this.userName;
         return (name.equals(uPattern));
     }
 
     public boolean setPassword(String name)
     {
         /* your code here */
+        this.password = (name.equals(pPattern))?name:this.password;
         return (name.equals(pPattern));
     }
 
