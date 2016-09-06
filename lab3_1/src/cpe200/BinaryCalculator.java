@@ -52,7 +52,13 @@ public class BinaryCalculator {
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        BigDecimal tmp = firstOperand.divide(secondOperand,6);
+        if(secondOperand.toString() == "0" || secondOperand.toString() == "0.0") {
+            throw new RuntimeException("The operation must raise an exception");
+            //return null;
+        }
+        BigDecimal tmp = firstOperand.divide(secondOperand,5,5);
+
+        tmp = tmp.stripTrailingZeros();
 
         return tmp.toString();
     }

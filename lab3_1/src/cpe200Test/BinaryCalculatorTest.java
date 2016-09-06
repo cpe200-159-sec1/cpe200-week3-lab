@@ -60,7 +60,7 @@ public class BinaryCalculatorTest {
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
         try {
-            binaryCalculator.multiply();
+            binaryCalculator.division();
             fail("The operation must raise an exception");
         } catch (Exception ex) {
             assertTrue(true);
@@ -152,7 +152,7 @@ public class BinaryCalculatorTest {
         secondOperand = new Operand(3.0);
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
-        assertEquals("2.0", binaryCalculator.division());
+        assertEquals("2", binaryCalculator.division());
 
     }
 
@@ -213,7 +213,7 @@ public class BinaryCalculatorTest {
         binaryCalculator.setFirstOperand(firstOperand);
         binaryCalculator.setSecondOperand(secondOperand);
         try {
-            binaryCalculator.multiply();
+            binaryCalculator.division();
             fail("The operation must raise an exception");
         } catch (Exception ex) {
             assertTrue(true);
