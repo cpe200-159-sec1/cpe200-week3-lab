@@ -1,11 +1,13 @@
 package cpe200;
 
+import java.math.BigDecimal;
+
 /**
  * Created by pruet on 5/9/2559.
  */
 
 public class BinaryCalculator {
-    /* your code here */
+    String first, second;
 
     public BinaryCalculator()
     {
@@ -14,38 +16,46 @@ public class BinaryCalculator {
 
     public void setFirstOperand(Operand operand)
     {
-        /* your code here */
+        this.first = operand.operand;
     }
 
 
     public void setSecondOperand(Operand operand)
     {
-        /* your code here */
+        this.second = operand.operand;
     }
 
     public String add()
     {
-        /* your code here */
-        return null;
+        BigDecimal a = new BigDecimal(this.first);
+        BigDecimal b = a.add(new BigDecimal(this.second)).stripTrailingZeros();
+        return b.toString();
     }
 
     public String subtract()
     {
-        /* your code here */
-        return null;
+        BigDecimal a = new BigDecimal(this.first);
+        BigDecimal b = a.subtract(new BigDecimal(this.second)).stripTrailingZeros();
+        return b.toString();
     }
 
     public String multiply()
     {
-        /* your code here */
-        return null;
+        BigDecimal a = new BigDecimal(this.first);
+        BigDecimal b = a.multiply(new BigDecimal(this.second)).stripTrailingZeros();
+        return b.toString();
     }
 
     /* This method should throw an exception when divide by zero */
     public String division()
     {
-        /* your code here */
-        return null;
+        BigDecimal a = new BigDecimal(this.first);
+        BigDecimal b = new BigDecimal(this.second);
+        if (b.compareTo(BigDecimal.ZERO) == 0)
+            throw new IllegalArgumentException("Argument 'divisor' is 0");
+        b = a.divide(b, 5, BigDecimal.ROUND_HALF_UP).stripTrailingZeros();
+
+        return b.toString();
     }
 
 
