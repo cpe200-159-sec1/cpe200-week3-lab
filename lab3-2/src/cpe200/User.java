@@ -31,19 +31,30 @@ public class User {
     }
     public boolean setPassword(String name)
     {
-        /* your code here */
+        if (name.length() >=12){
+            boolean haveDigit=false,haveCapital=false,haveSmall=false;
+            for (int i=0;i<name.length();i++)
+          {
+              if(Character.isUpperCase(name.charAt(i))) haveCapital=true;
+              else if(Character.isLowerCase(name.charAt(i))) haveSmall=true;
+              else if(Character.isDigit(name.charAt(i))) haveDigit=true;
+              if(haveCapital && haveDigit && haveSmall){
+                  password = name;
+                  return true;
+              }
+          }
+          return false;
+        }
         return false;
     }
 
     public String getUserName()
     {
-        /* your code here */
-        return null;
+        return userName;
     }
 
     public String getPassword()
     {
-        /* your code here */
-        return null;
+        return password;
     }
 }
