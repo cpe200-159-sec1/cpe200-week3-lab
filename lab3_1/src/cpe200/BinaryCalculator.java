@@ -18,12 +18,14 @@ public class BinaryCalculator {
     }
 
     public void setFirstOperand(Operand operand)
+
     {
         this.firstOperand = new BigDecimal(operand.operand);
     }
 
 
     public void setSecondOperand(Operand operand)
+
     {
         this.secondOperand = new BigDecimal(operand.operand);
     }
