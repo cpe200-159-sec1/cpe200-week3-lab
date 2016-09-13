@@ -1,6 +1,7 @@
 package cpe200Test;
 
 import cpe200.BinaryCalculator;
+import cpe200.Operand;
 import org.junit.Before;
 import org.junit.Test;
 
